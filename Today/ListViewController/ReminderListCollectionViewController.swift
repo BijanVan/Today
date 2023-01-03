@@ -20,6 +20,7 @@ class ReminderListCollectionViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +36,13 @@ class ReminderListCollectionViewController: UICollectionViewController {
         collectionView.dataSource = dataSource
     }
     
+    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let id = reminders[indexPath.item].id
+        showDetail(for: id)
+        
+        return false
+    }
+    
     // MARK: Private functions
     private class func listLayout() -> UICollectionViewCompositionalLayout {
         var config = UICollectionLayoutListConfiguration(appearance: .grouped)
@@ -42,6 +50,12 @@ class ReminderListCollectionViewController: UICollectionViewController {
         config.backgroundColor = .clear
         
         return UICollectionViewCompositionalLayout.list(using: config)
+    }
+    
+    private func showDetail(for id: Reminder.ID) {
+        let reminder = reminder(for: id)
+        let viewController = ReminderViewController(reminder: reminder)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

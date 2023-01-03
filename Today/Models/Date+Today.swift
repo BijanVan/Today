@@ -8,6 +8,7 @@
 import Foundation
 
 extension Date {
+    
     var dayAndTimeText: String {
         let timeText = formatted(date: .omitted, time: .shortened)
         if Locale.current.calendar.isDateInToday(self) {
@@ -27,4 +28,5 @@ extension Date {
             return formatted(.dateTime.month().day().weekday(.wide))
         }
     }
+    
 }

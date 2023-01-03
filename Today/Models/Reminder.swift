@@ -8,23 +8,28 @@
 import Foundation
 
 struct Reminder: Identifiable {
+    
     var id: UUID = UUID()
     var title: String
     var due: Date
     var notes: String?
     var isComplete: Bool = false
+    
 }
 
 extension Array where Element == Reminder {
+    
     func indexOfReminder(with id: Reminder.ID) -> Index {
         guard let index = firstIndex(where: { $0.id == id }) else { fatalError() }
         return index
     }
+    
 }
 
 #if DEBUG
 
 extension Reminder {
+    
     static var sampleData = [
         Reminder(title: "Submit reimbursement report", due: Date().addingTimeInterval(800.0), notes: "Don't forget about taxi receipts"),
         Reminder(title: "Code review", due: Date().addingTimeInterval(14000.0), notes: "Check tech specs in shared folder", isComplete: true),
@@ -36,6 +41,7 @@ extension Reminder {
         Reminder(title: "Confirm group reservation", due: Date().addingTimeInterval(92500.0), notes: "Ask about space heaters"),
         Reminder(title: "Add beta testers to TestFlight", due: Date().addingTimeInterval(101000.0),  notes: "v0.9 out on Friday")
     ]
+    
 }
 
 #endif

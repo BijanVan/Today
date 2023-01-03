@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIColor {
+    
     static var todayDetailCellTint: UIColor {
         UIColor(named: "TodayDetailCellTint") ?? .tintColor
     }
@@ -59,5 +60,6 @@ extension UIColor {
     static var todayProgressUpperBackground: UIColor {
         UIColor(named: "TodayProgressUpperBackground") ?? .systemGray6
     }
+    
 }
 
