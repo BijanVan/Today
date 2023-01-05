@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Reminder: Identifiable {
+struct Reminder: Equatable, Identifiable {
     
     var id: UUID = UUID()
     var title: String
