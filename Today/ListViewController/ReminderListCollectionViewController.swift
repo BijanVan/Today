@@ -13,7 +13,9 @@ class ReminderListCollectionViewController: UICollectionViewController {
     var reminders: [Reminder] = Reminder.sampleData
     
     init() {
-        super.init(collectionViewLayout: ReminderListCollectionViewController.listLayout())
+        let config = UICollectionLayoutListConfiguration(appearance: .grouped)
+        let listLayout = UICollectionViewCompositionalLayout.list(using: config)
+        super.init(collectionViewLayout: listLayout)
     }
     
     required init?(coder: NSCoder) {
@@ -24,6 +26,9 @@ class ReminderListCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let listLayout = listLayout()
+        collectionView.collectionViewLayout = listLayout
+        
         let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         
         dataSource = DataSource(collectionView: collectionView) {
@@ -31,6 +36,10 @@ class ReminderListCollectionViewController: UICollectionViewController {
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
         
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didPressAddButton(_:)))
+        addButton.accessibilityLabel = NSLocalizedString("Add reminder", comment: "Add button accessibility label")
+        navigationItem.rightBarButtonItem = addButton
+
         updateSnapshot()
         
         collectionView.dataSource = dataSource
@@ -44,12 +53,25 @@ class ReminderListCollectionViewController: UICollectionViewController {
     }
     
     // MARK: Private functions
-    private class func listLayout() -> UICollectionViewCompositionalLayout {
+    private func listLayout() -> UICollectionViewCompositionalLayout {
         var config = UICollectionLayoutListConfiguration(appearance: .grouped)
         config.showsSeparators = false
         config.backgroundColor = .clear
+        config.trailingSwipeActionsConfigurationProvider = makeSwipeActions
         
         return UICollectionViewCompositionalLayout.list(using: config)
+    }
+    
+    private func makeSwipeActions(for indexPath: IndexPath?) -> UISwipeActionsConfiguration? {
+        guard let indexPath, let id = dataSource.itemIdentifier(for: indexPath) else { return nil }
+        let deleteActionTitle = NSLocalizedString("Delete", comment: "Delete action title")
+        let deleteAction = UIContextualAction(style: .destructive, title: deleteActionTitle) {
+            [weak self] _, _, completion in
+            self?.deleteReminder(with: id)
+            self?.updateSnapshot()
+            completion(false)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     private func showDetail(for id: Reminder.ID) {
