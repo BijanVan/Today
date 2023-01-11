@@ -31,6 +31,10 @@
 		A3E1F0C42963D0C7000C16B6 /* ReminderViewController+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1F0C32963D0C7000C16B6 /* ReminderViewController+Row.swift */; };
 		A3E1F0C62964869B000C16B6 /* ReminderViewController+Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1F0C52964869B000C16B6 /* ReminderViewController+Section.swift */; };
 		A3ECEE4F296DC5D1003AB1CA /* CAGradientLayer+ListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECEE4E296DC5D1003AB1CA /* CAGradientLayer+ListStyle.swift */; };
+		A3ECEE51296F0149003AB1CA /* TodayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECEE50296F0149003AB1CA /* TodayError.swift */; };
+		A3ECEE53296F0232003AB1CA /* EKEventStore+AsyncFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECEE52296F0232003AB1CA /* EKEventStore+AsyncFetch.swift */; };
+		A3ECEE55296F093A003AB1CA /* Reminder+EKReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECEE54296F093A003AB1CA /* Reminder+EKReminder.swift */; };
+		A3ECEE57296F10A8003AB1CA /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECEE56296F10A8003AB1CA /* ReminderStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		A3E1F0C32963D0C7000C16B6 /* ReminderViewController+Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderViewController+Row.swift"; sourceTree = "<group>"; };
 		A3E1F0C52964869B000C16B6 /* ReminderViewController+Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderViewController+Section.swift"; sourceTree = "<group>"; };
 		A3ECEE4E296DC5D1003AB1CA /* CAGradientLayer+ListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+ListStyle.swift"; sourceTree = "<group>"; };
+		A3ECEE50296F0149003AB1CA /* TodayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayError.swift; sourceTree = "<group>"; };
+		A3ECEE52296F0232003AB1CA /* EKEventStore+AsyncFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEventStore+AsyncFetch.swift"; sourceTree = "<group>"; };
+		A3ECEE54296F093A003AB1CA /* Reminder+EKReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+EKReminder.swift"; sourceTree = "<group>"; };
+		A3ECEE56296F10A8003AB1CA /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +117,13 @@
 			isa = PBXGroup;
 			children = (
 				A3E1F0BA2963498E000C16B6 /* UIColor+Today.swift */,
-				A306A57C2961F84200E3F574 /* Reminder.swift */,
 				A3E1F0B62963368B000C16B6 /* Date+Today.swift */,
+				A3ECEE50296F0149003AB1CA /* TodayError.swift */,
+				A306A57C2961F84200E3F574 /* Reminder.swift */,
+				A3ECEE54296F093A003AB1CA /* Reminder+EKReminder.swift */,
 				A3D7DB8429690A72004F36AC /* ReminderListStyle.swift */,
+				A3ECEE56296F10A8003AB1CA /* ReminderStore.swift */,
+				A3ECEE52296F0232003AB1CA /* EKEventStore+AsyncFetch.swift */,
 				A306A57A2961F68900E3F574 /* UIViewController+Preview.swift */,
 				A3ECEE4E296DC5D1003AB1CA /* CAGradientLayer+ListStyle.swift */,
 			);
@@ -225,10 +237,12 @@
 			files = (
 				A306A5632961E95B00E3F574 /* AppDelegate.swift in Sources */,
 				A3D7DB87296C6D3E004F36AC /* ProgressHeaderView.swift in Sources */,
+				A3ECEE51296F0149003AB1CA /* TodayError.swift in Sources */,
 				A306A57B2961F68900E3F574 /* UIViewController+Preview.swift in Sources */,
 				A3E1F0C42963D0C7000C16B6 /* ReminderViewController+Row.swift in Sources */,
 				A3E1F0BF2963C49A000C16B6 /* ReminderListViewController+Actions.swift in Sources */,
 				A3D7DB7D2965DFDB004F36AC /* TextFieldContentView.swift in Sources */,
+				A3ECEE55296F093A003AB1CA /* Reminder+EKReminder.swift in Sources */,
 				A3D7DB8529690A72004F36AC /* ReminderListStyle.swift in Sources */,
 				A3E1F0C62964869B000C16B6 /* ReminderViewController+Section.swift in Sources */,
 				A3D7DB8129665C1C004F36AC /* TextViewContentView.swift in Sources */,
@@ -240,9 +254,11 @@
 				A3D7DB7B2965DB34004F36AC /* UIView+PinnedSubview.swift in Sources */,
 				A3D7DB7F2965E1C6004F36AC /* Configuration+Stateless.swift in Sources */,
 				A3E1F0B92963449E000C16B6 /* ReminderListViewController+DataSource.swift in Sources */,
+				A3ECEE53296F0232003AB1CA /* EKEventStore+AsyncFetch.swift in Sources */,
 				A306A5652961E95B00E3F574 /* SceneDelegate.swift in Sources */,
 				A3E1F0C22963CEA0000C16B6 /* ReminderViewController.swift in Sources */,
 				A306A57D2961F84200E3F574 /* Reminder.swift in Sources */,
+				A3ECEE57296F10A8003AB1CA /* ReminderStore.swift in Sources */,
 				A3D7DB8329665D55004F36AC /* DatePickerContentView.swift in Sources */,
 				A3E1F0BB2963498E000C16B6 /* UIColor+Today.swift in Sources */,
 			);
@@ -386,6 +402,7 @@
 				DEVELOPMENT_TEAM = XA84Z9Z2T7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Today/Info.plist;
+				INFOPLIST_KEY_NSRemindersUsageDescription = "Your reminders can help you stay on track.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -413,6 +430,7 @@
 				DEVELOPMENT_TEAM = XA84Z9Z2T7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Today/Info.plist;
+				INFOPLIST_KEY_NSRemindersUsageDescription = "Your reminders can help you stay on track.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
