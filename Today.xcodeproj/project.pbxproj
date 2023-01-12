@@ -35,6 +35,7 @@
 		A3ECEE53296F0232003AB1CA /* EKEventStore+AsyncFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECEE52296F0232003AB1CA /* EKEventStore+AsyncFetch.swift */; };
 		A3ECEE55296F093A003AB1CA /* Reminder+EKReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECEE54296F093A003AB1CA /* Reminder+EKReminder.swift */; };
 		A3ECEE57296F10A8003AB1CA /* ReminderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECEE56296F10A8003AB1CA /* ReminderStore.swift */; };
+		A3ECEE5929705E50003AB1CA /* EKReminder+Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECEE5829705E50003AB1CA /* EKReminder+Reminder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		A3ECEE52296F0232003AB1CA /* EKEventStore+AsyncFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEventStore+AsyncFetch.swift"; sourceTree = "<group>"; };
 		A3ECEE54296F093A003AB1CA /* Reminder+EKReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+EKReminder.swift"; sourceTree = "<group>"; };
 		A3ECEE56296F10A8003AB1CA /* ReminderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStore.swift; sourceTree = "<group>"; };
+		A3ECEE5829705E50003AB1CA /* EKReminder+Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKReminder+Reminder.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				A3ECEE52296F0232003AB1CA /* EKEventStore+AsyncFetch.swift */,
 				A306A57A2961F68900E3F574 /* UIViewController+Preview.swift */,
 				A3ECEE4E296DC5D1003AB1CA /* CAGradientLayer+ListStyle.swift */,
+				A3ECEE5829705E50003AB1CA /* EKReminder+Reminder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				A3E1F0B92963449E000C16B6 /* ReminderListViewController+DataSource.swift in Sources */,
 				A3ECEE53296F0232003AB1CA /* EKEventStore+AsyncFetch.swift in Sources */,
 				A306A5652961E95B00E3F574 /* SceneDelegate.swift in Sources */,
+				A3ECEE5929705E50003AB1CA /* EKReminder+Reminder.swift in Sources */,
 				A3E1F0C22963CEA0000C16B6 /* ReminderViewController.swift in Sources */,
 				A306A57D2961F84200E3F574 /* Reminder.swift in Sources */,
 				A3ECEE57296F10A8003AB1CA /* ReminderStore.swift in Sources */,
