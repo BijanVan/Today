@@ -76,3 +76,32 @@ class ProgressHeaderView: UICollectionReusableView {
         lowerView.backgroundColor = .todayProgressLowerBackground
     }
 }
+
+// MARK: Previews
+#if DEBUG
+
+import SwiftUI
+
+@available(iOS 13.0, *)
+struct ProgressHeaderView_Preview: PreviewProvider {
+    static let deviceNames: [String] = [
+        "iPhone 14 Pro",
+        "iPhone 13 mini",
+    ]
+    
+    static var previews: some View {
+        ForEach(deviceNames, id: \.self) { deviceName in
+            UIViewPreview {
+                let view = ProgressHeaderView()
+                view.backgroundColor = .systemFill
+                view.progress = 0.5
+                return view
+            }.previewLayout(.sizeThatFits)
+                .padding(10)
+                .previewDevice(PreviewDevice(rawValue: deviceName))
+                .previewDisplayName(deviceName)
+        }
+    }
+}
+
+#endif

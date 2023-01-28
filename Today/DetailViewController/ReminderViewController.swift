@@ -133,20 +133,24 @@ class ReminderViewController: UICollectionViewController {
     }
 }
 
+// MARK: Previews
 #if DEBUG
 
 import SwiftUI
 
-struct ReminderViewControllerPreview: PreviewProvider {
-    // xcrun simctl list devicetypes
-    static var devices = ["iPhone 14 Pro", "iPhone 13 mini"]
+@available(iOS 13.0, *)
+struct ReminderViewController_Preview: PreviewProvider {
+    static let deviceNames: [String] = [
+        "iPhone 14 Pro",
+        "iPhone 13 mini",
+    ]
     
     static var previews: some View {
-        ForEach(devices, id: \.self) { device in
-            ReminderViewController(reminder: Reminder.sampleData[0]) { _ in }
-                .toPreview()
-                .previewDevice(PreviewDevice(rawValue: device))
-                .previewDisplayName(device)
+        ForEach(deviceNames, id: \.self) { deviceName in
+            UIViewControllerPreview {
+                ReminderViewController(reminder: Reminder.sampleData[0]) { _ in }
+            }.previewDevice(PreviewDevice(rawValue: deviceName))
+                .previewDisplayName(deviceName)
         }
     }
 }

@@ -6,28 +6,22 @@
 //
 
 import UIKit
-
-#if DEBUG
-
 import SwiftUI
 
-extension UIViewController {
+@available(iOS 13, *)
+struct UIViewControllerPreview<ViewController: UIViewController>: UIViewControllerRepresentable {
+    let viewController: ViewController
     
-    private struct Preview: UIViewControllerRepresentable {
-        
-        let viewController: UIViewController
-        
-        
-        public func makeUIViewController(context: Context) -> UIViewController {
-            return viewController
-        }
-        
-        public func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
-        
+    init(_ builder: @escaping () -> ViewController) {
+        viewController = builder()
     }
     
-    func toPreview() -> some View { Preview(viewController: self) }
+    // MARK: - UIViewControllerRepresentable
+    func makeUIViewController(context: Context) -> ViewController {
+        viewController
+    }
     
+    func updateUIViewController(_ uiViewController: ViewController, context: UIViewControllerRepresentableContext<UIViewControllerPreview<ViewController>>) {
+        return
+    }
 }
-
-#endif
